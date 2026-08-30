@@ -1,0 +1,411 @@
+<div class="dashboard-page">
+
+  <!-- HEADER -->
+
+  <div class="page-header">
+
+    <div>
+
+      <div class="breadcrumb">
+        ACME / Dashboard
+      </div>
+
+      <h1>
+        Salary Management Dashboard
+      </h1>
+
+      <p>
+        Get an overview of employees and salary information.
+      </p>
+
+    </div>
+
+    <a
+      routerLink="/employees/new"
+      class="add-button">
+
+      + Add Employee
+
+    </a>
+
+  </div>
+
+
+  <!-- ERROR -->
+
+  <div
+    *ngIf="errorMessage"
+    class="error-message">
+
+    {{ errorMessage }}
+
+  </div>
+
+
+  <!-- STATISTICS -->
+
+  <div class="stats-grid">
+
+
+    <!-- EMPLOYEES -->
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        👥
+      </div>
+
+      <div class="stat-content">
+
+        <span>
+          Total Employees
+        </span>
+
+        <strong>
+          {{ totalEmployees }}
+        </strong>
+
+        <small>
+          Active employees
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <!-- PAYROLL -->
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        💰
+      </div>
+
+      <div class="stat-content">
+
+        <span>
+          Payroll Loaded
+        </span>
+
+        <strong>
+          ₹{{ totalPayroll | number:'1.0-0' }}
+        </strong>
+
+        <small>
+          First 20 employees
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <!-- AVERAGE -->
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        📊
+      </div>
+
+      <div class="stat-content">
+
+        <span>
+          Average Salary
+        </span>
+
+        <strong>
+          ₹{{ averageSalary | number:'1.0-0' }}
+        </strong>
+
+        <small>
+          Based on loaded employees
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <!-- COUNTRIES -->
+
+    <div class="stat-card">
+
+      <div class="stat-icon">
+        🌍
+      </div>
+
+      <div class="stat-content">
+
+        <span>
+          Countries
+        </span>
+
+        <strong>
+          {{ getCountries() }}
+        </strong>
+
+        <small>
+          Employee locations
+        </small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- MAIN CONTENT -->
+
+  <div class="dashboard-grid">
+
+
+    <!-- EMPLOYEE TABLE -->
+
+    <div class="dashboard-card employee-card">
+
+      <div class="card-header">
+
+        <div>
+
+          <h2>
+            Recent Employees
+          </h2>
+
+          <p>
+            Latest employee records
+          </p>
+
+        </div>
+
+        <a
+          routerLink="/employees"
+          class="view-link">
+
+          View All →
+
+        </a>
+
+      </div>
+
+
+      <div class="table-container">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>
+                Employee
+              </th>
+
+              <th>
+                Department
+              </th>
+
+              <th>
+                Country
+              </th>
+
+              <th>
+                Salary
+              </th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr
+              *ngFor="let employee of employees">
+
+              <td>
+
+                <div class="employee-info">
+
+                  <div class="avatar">
+
+                    {{
+                      employee.firstName
+                        ?.charAt(0)
+                    }}
+
+                  </div>
+
+                  <div>
+
+                    <strong>
+
+                      {{ employee.firstName }}
+                      {{ employee.lastName }}
+
+                    </strong>
+
+                    <small>
+
+                      {{ employee.email }}
+
+                    </small>
+
+                  </div>
+
+                </div>
+
+              </td>
+
+
+              <td>
+
+                {{ employee.department }}
+
+              </td>
+
+
+              <td>
+
+                {{ employee.country }}
+
+              </td>
+
+
+              <td>
+
+                <strong>
+
+                  {{ employee.currency }}
+                  {{ employee.annualSalary | number:'1.0-0' }}
+
+                </strong>
+
+              </td>
+
+            </tr>
+
+
+            <tr
+              *ngIf="employees.length === 0">
+
+              <td
+                colspan="4"
+                class="empty">
+
+                No employees found.
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+
+    <!-- QUICK ACTIONS -->
+
+    <div class="dashboard-card">
+
+      <div class="card-header">
+
+        <div>
+
+          <h2>
+            Quick Actions
+          </h2>
+
+          <p>
+            Common HR tasks
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="quick-actions">
+
+
+        <a
+          routerLink="/employees/new"
+          class="action">
+
+          <span class="action-icon">
+            ➕
+          </span>
+
+          <div>
+
+            <strong>
+              Add Employee
+            </strong>
+
+            <small>
+              Create a new employee
+            </small>
+
+          </div>
+
+        </a>
+
+
+        <a
+          routerLink="/employees"
+          class="action">
+
+          <span class="action-icon">
+            👥
+          </span>
+
+          <div>
+
+            <strong>
+              Employee Directory
+            </strong>
+
+            <small>
+              View all employees
+            </small>
+
+          </div>
+
+        </a>
+
+
+        <a
+          routerLink="/employees"
+          class="action">
+
+          <span class="action-icon">
+            💰
+          </span>
+
+          <div>
+
+            <strong>
+              Salary Management
+            </strong>
+
+            <small>
+              Review salary information
+            </small>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

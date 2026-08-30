@@ -1,0 +1,526 @@
+
+/* =========================================================
+   ACME - ADD EMPLOYEE FORM
+   ========================================================= */
+
+.form-page {
+  min-height: calc(100vh - 70px);
+  padding: 32px;
+  background: #f5f7fb;
+  color: #172033;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.breadcrumb {
+  margin-bottom: 8px;
+
+  color: #8a94a6;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 30px;
+  line-height: 1.2;
+
+  font-weight: 750;
+
+  letter-spacing: -0.6px;
+}
+
+.page-header p {
+  margin: 9px 0 0;
+
+  color: #7b8495;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   FORM CARD
+   ========================================================= */
+
+.form-card {
+  width: 100%;
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  background: #ffffff;
+
+  border: 1px solid #e8ecf2;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.045);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   FORM SECTION
+   ========================================================= */
+
+.section {
+  padding: 28px 30px;
+
+  border-bottom:
+    1px solid #edf0f4;
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.2px;
+}
+
+.section-description {
+  margin: 6px 0 22px;
+
+  color: #8a94a6;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px 22px;
+}
+
+
+/* =========================================================
+   FIELD
+   ========================================================= */
+
+.field {
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.field label {
+  margin-bottom: 7px;
+
+  color: #374151;
+
+  font-size: 12px;
+
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   INPUT + SELECT
+   ========================================================= */
+
+.field input,
+.field select {
+  width: 100%;
+
+  height: 44px;
+
+  box-sizing: border-box;
+
+  padding: 0 13px;
+
+  border: 1px solid #d9dee8;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #263247;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.field input::placeholder {
+  color: #b0b7c3;
+}
+
+
+/* SELECT */
+
+.field select {
+  cursor: pointer;
+}
+
+
+/* FOCUS */
+
+.field input:focus,
+.field select:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.10);
+
+  background: #ffffff;
+}
+
+
+/* HOVER */
+
+.field input:hover,
+.field select:hover {
+  border-color: #b8c1d0;
+}
+
+
+/* =========================================================
+   INVALID FIELD
+   ========================================================= */
+
+.field input.ng-invalid.ng-touched,
+.field select.ng-invalid.ng-touched {
+  border-color: #ef4444;
+
+  background: #fffafa;
+}
+
+.field input.ng-invalid.ng-touched:focus,
+.field select.ng-invalid.ng-touched:focus {
+  border-color: #ef4444;
+
+  box-shadow:
+    0 0 0 3px rgba(239, 68, 68, 0.10);
+}
+
+
+/* =========================================================
+   VALID FIELD
+   ========================================================= */
+
+.field input.ng-valid.ng-touched,
+.field select.ng-valid.ng-touched {
+  border-color: #b8cdbf;
+}
+
+
+/* =========================================================
+   VALIDATION MESSAGE
+   ========================================================= */
+
+.field small {
+  margin-top: 6px;
+
+  color: #dc2626;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   SALARY INPUT
+   ========================================================= */
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+   ========================================================= */
+
+.success-message {
+  margin: 22px 30px 0;
+
+  padding: 13px 16px;
+
+  border: 1px solid #bbf7d0;
+
+  border-radius: 9px;
+
+  background: #f0fdf4;
+
+  color: #15803d;
+
+  font-size: 13px;
+
+  font-weight: 550;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+.error-message {
+  margin: 22px 30px 0;
+
+  padding: 13px 16px;
+
+  border: 1px solid #fecaca;
+
+  border-radius: 9px;
+
+  background: #fef2f2;
+
+  color: #b91c1c;
+
+  font-size: 13px;
+
+  font-weight: 550;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.form-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  padding: 22px 30px;
+
+  background: #fafbfc;
+
+  border-top:
+    1px solid #edf0f4;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+   ========================================================= */
+
+.cancel-button {
+  height: 42px;
+
+  padding: 0 18px;
+
+  border: 1px solid #d8dee8;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #4b5565;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.cancel-button:hover {
+  background: #f8fafc;
+
+  border-color: #c4ccd8;
+
+  color: #263247;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+   ========================================================= */
+
+.save-button {
+  min-width: 145px;
+
+  height: 42px;
+
+  padding: 0 20px;
+
+  border: 1px solid #2563eb;
+
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 10px rgba(37, 99, 235, 0.16);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.save-button:hover:not(:disabled) {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 15px rgba(37, 99, 235, 0.23);
+}
+
+.save-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   DISABLED BUTTON
+   ========================================================= */
+
+.save-button:disabled {
+  background: #93b4f5;
+
+  border-color: #93b4f5;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .form-page {
+    padding: 24px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    max-width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .form-page {
+    padding: 18px 12px;
+  }
+
+  .page-header {
+    margin-bottom: 20px;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .page-header p {
+    font-size: 13px;
+  }
+
+  .section {
+    padding: 22px 18px;
+  }
+
+  .section h2 {
+    font-size: 16px;
+  }
+
+  .form-grid {
+    gap: 16px;
+  }
+
+  .success-message,
+  .error-message {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  .form-actions {
+    padding: 18px;
+
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+  }
+
+  .cancel-button,
+  .save-button {
+    width: 100%;
+  }
+
+}
+

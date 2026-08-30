@@ -1,0 +1,474 @@
+
+/* =========================================================
+   ACME HR PORTAL - MAIN APP LAYOUT
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+
+  display: flex;
+
+  background: #f5f7fb;
+
+  color: #172033;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 245px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 26px 16px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #111827 0%,
+      #172033 100%
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    4px 0 20px rgba(15, 23, 42, 0.08);
+
+  z-index: 100;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand {
+  padding: 4px 13px 30px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 25px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.brand p {
+  margin: 8px 0 0;
+
+  color: #9ca7b8;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.sidebar nav {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin-top: 25px;
+}
+
+.sidebar nav a {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  min-height: 45px;
+
+  padding: 0 13px;
+
+  border-radius: 9px;
+
+  color: #aeb7c7;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 550;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* Small navigation indicator */
+
+.sidebar nav a::before {
+  content: "";
+
+  width: 4px;
+
+  height: 4px;
+
+  margin-right: 11px;
+
+  border-radius: 50%;
+
+  background: #657084;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* =========================================================
+   NAV HOVER
+   ========================================================= */
+
+.sidebar nav a:hover {
+  background: rgba(255, 255, 255, 0.07);
+
+  color: #ffffff;
+
+  transform: translateX(2px);
+}
+
+.sidebar nav a:hover::before {
+  background: #60a5fa;
+
+  transform: scale(1.5);
+}
+
+
+/* =========================================================
+   ACTIVE ROUTE
+   ========================================================= */
+
+.sidebar nav a.router-link-active {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(37, 99, 235, 0.22),
+      rgba(37, 99, 235, 0.08)
+    );
+
+  color: #ffffff;
+
+  font-weight: 650;
+
+  box-shadow:
+    inset 3px 0 0 #3b82f6;
+}
+
+.sidebar nav a.router-link-active::before {
+  background: #60a5fa;
+
+  transform: scale(1.5);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.content {
+  width: calc(100% - 245px);
+
+  min-height: 100vh;
+
+  margin-left: 245px;
+
+  background: #f5f7fb;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar {
+  position: sticky;
+
+  top: 0;
+
+  height: 68px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 32px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border-bottom:
+    1px solid #e8ecf2;
+
+  backdrop-filter: blur(10px);
+
+  z-index: 50;
+}
+
+
+/* Portal title */
+
+.topbar strong {
+  color: #172033;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.1px;
+}
+
+
+/* =========================================================
+   USER / ROLE
+   ========================================================= */
+
+.topbar span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #596579;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* User avatar */
+
+.topbar span::before {
+  content: "HR";
+
+  width: 31px;
+
+  height: 31px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 9px;
+
+  font-weight: 750;
+
+  border:
+    1px solid #dbeafe;
+}
+
+
+/* =========================================================
+   CONTENT SCROLL
+   ========================================================= */
+
+router-outlet {
+  display: block;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    width: 210px;
+  }
+
+  .content {
+    width: calc(100% - 210px);
+
+    margin-left: 210px;
+  }
+
+  .topbar {
+    padding: 0 24px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: auto;
+
+    padding: 15px;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+  }
+
+  .app {
+    display: block;
+  }
+
+  .brand {
+    padding: 0;
+
+    border: none;
+  }
+
+  .brand h2 {
+    font-size: 20px;
+  }
+
+  .brand p {
+    display: none;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+
+    gap: 4px;
+
+    margin: 0;
+  }
+
+  .sidebar nav a {
+    min-height: 38px;
+
+    padding: 0 9px;
+
+    font-size: 11px;
+  }
+
+  .sidebar nav a::before {
+    display: none;
+  }
+
+  .sidebar nav a.router-link-active {
+    box-shadow:
+      inset 0 -2px 0 #3b82f6;
+  }
+
+  .content {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+  .topbar {
+    height: 60px;
+
+    padding: 0 15px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+  .sidebar {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .sidebar nav {
+    width: 100%;
+
+    overflow-x: auto;
+
+    padding-bottom: 2px;
+  }
+
+  .sidebar nav a {
+    flex-shrink: 0;
+  }
+
+  .topbar strong {
+    font-size: 12px;
+  }
+
+  .topbar span {
+    font-size: 10px;
+  }
+
+  .topbar span::before {
+    width: 27px;
+
+    height: 27px;
+  }
+
+}
+

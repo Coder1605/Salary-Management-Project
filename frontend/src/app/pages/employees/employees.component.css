@@ -1,0 +1,703 @@
+
+/* =========================================================
+   ACME - EMPLOYEES PAGE
+   ========================================================= */
+
+.employees-page {
+  min-height: calc(100vh - 70px);
+
+  padding: 32px;
+
+  background: #f5f7fb;
+
+  color: #172033;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.page-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 28px;
+}
+
+.breadcrumb {
+  margin-bottom: 8px;
+
+  color: #8a94a6;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 30px;
+
+  line-height: 1.2;
+
+  font-weight: 750;
+
+  letter-spacing: -0.6px;
+}
+
+.page-header p {
+  margin: 9px 0 0;
+
+  color: #7b8495;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   ADD EMPLOYEE BUTTON
+   ========================================================= */
+
+.add-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 12px 18px;
+
+  border: 1px solid #2563eb;
+
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(37, 99, 235, 0.18);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-button:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 18px rgba(37, 99, 235, 0.25);
+}
+
+.add-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   SUMMARY GRID
+   ========================================================= */
+
+.summary-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   SUMMARY CARD
+   ========================================================= */
+
+.summary-card {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  min-height: 96px;
+
+  padding: 19px;
+
+  background: #ffffff;
+
+  border: 1px solid #e8ecf2;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.035);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #dbe4f0;
+
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.07);
+}
+
+
+/* Decorative circle */
+
+.summary-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 70px;
+
+  height: 70px;
+
+  right: -30px;
+
+  top: -30px;
+
+  border-radius: 50%;
+
+  background: #eff6ff;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   SUMMARY ICON
+   ========================================================= */
+
+.summary-icon {
+  width: 48px;
+
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-right: 14px;
+
+  border-radius: 12px;
+
+  background: #eff6ff;
+
+  font-size: 21px;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+
+/* Different colors for cards */
+
+.summary-card:nth-child(2)
+.summary-icon {
+  background: #ecfdf5;
+}
+
+.summary-card:nth-child(3)
+.summary-icon {
+  background: #fff7ed;
+}
+
+.summary-card:nth-child(4)
+.summary-icon {
+  background: #f5f3ff;
+}
+
+
+/* =========================================================
+   SUMMARY TEXT
+   ========================================================= */
+
+.summary-card > div:last-child {
+  position: relative;
+
+  z-index: 1;
+}
+
+.summary-card span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #7b8495;
+
+  font-size: 12px;
+
+  font-weight: 550;
+}
+
+.summary-card strong {
+  display: block;
+
+  color: #172033;
+
+  font-size: 23px;
+
+  line-height: 1.1;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   TABLE CARD
+   ========================================================= */
+
+.table-card {
+  background: #ffffff;
+
+  border: 1px solid #e8ecf2;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.035);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLE TITLE
+   ========================================================= */
+
+.table-title {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 21px 22px;
+
+  border-bottom:
+    1px solid #edf0f4;
+}
+
+.table-title h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.table-title p {
+  margin: 5px 0 0;
+
+  color: #8a94a6;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+   ========================================================= */
+
+.table-container {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+table {
+  width: 100%;
+
+  min-width: 750px;
+
+  border-collapse: collapse;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+thead {
+  background: #f8fafc;
+}
+
+th {
+  padding: 13px 20px;
+
+  text-align: left;
+
+  color: #7b8495;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+   ========================================================= */
+
+td {
+  padding: 16px 20px;
+
+  border-top:
+    1px solid #edf0f4;
+
+  color: #4b5565;
+
+  font-size: 12px;
+
+  vertical-align: middle;
+}
+
+tbody tr {
+  transition:
+    background 0.15s ease;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   EMPLOYEE NAME
+   ========================================================= */
+
+td:first-child strong {
+  display: inline-block;
+
+  margin-bottom: 3px;
+
+  color: #172033;
+
+  font-size: 13px;
+
+  font-weight: 650;
+}
+
+td:first-child small {
+  color: #9aa3b2;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   COUNTRY
+   ========================================================= */
+
+td:nth-child(2) {
+  color: #4b5565;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   DEPARTMENT
+   ========================================================= */
+
+td:nth-child(3) {
+  color: #4b5565;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   JOB TITLE
+   ========================================================= */
+
+td:nth-child(4) {
+  color: #4b5565;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   SALARY
+   ========================================================= */
+
+td:last-child {
+  color: #15803d;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.pagination {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 17px 20px;
+
+  border-top:
+    1px solid #edf0f4;
+
+  background: #fafbfc;
+}
+
+.pagination > span {
+  color: #8a94a6;
+
+  font-size: 11px;
+}
+
+.pagination > span strong {
+  color: #4b5565;
+
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   PAGINATION BUTTONS
+   ========================================================= */
+
+.pagination > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.pagination button {
+  min-width: 34px;
+
+  height: 34px;
+
+  padding: 0 9px;
+
+  border: 1px solid #dce2eb;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #596579;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.pagination button:hover {
+  background: #f1f5f9;
+
+  border-color: #cbd5e1;
+
+  color: #263247;
+}
+
+
+/* ACTIVE PAGE */
+
+.pagination button.active {
+  border-color: #2563eb;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 3px 8px rgba(37, 99, 235, 0.18);
+}
+
+.pagination button.active:hover {
+  background: #1d4ed8;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   DISABLED PAGINATION
+   ========================================================= */
+
+.pagination button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .summary-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .employees-page {
+    padding: 20px 15px;
+  }
+
+  .page-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .page-header p {
+    font-size: 13px;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .summary-card {
+    min-height: 88px;
+  }
+
+  .table-title {
+    padding: 18px;
+  }
+
+  .pagination {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 15px;
+  }
+
+  .pagination > div {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .employees-page {
+    padding: 15px 10px;
+  }
+
+  .summary-card {
+    padding: 16px;
+  }
+
+  .summary-card strong {
+    font-size: 20px;
+  }
+
+  .table-title h2 {
+    font-size: 15px;
+  }
+
+}
+

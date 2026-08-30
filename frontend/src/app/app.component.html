@@ -1,0 +1,48 @@
+<div class="app">
+
+  <aside class="sidebar">
+
+    <div class="brand">
+      <h2>ACME</h2>
+      <p>Salary Management</p>
+    </div>
+
+    <nav>
+
+      <a routerLink="/dashboard">
+        Dashboard
+      </a>
+
+      <a routerLink="/employees">
+        Employees
+      </a>
+
+      <a routerLink="/employees/new">
+        Add Employee
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+  <main class="content">
+
+    <header class="topbar">
+
+      <strong>
+        ACME HR Portal
+      </strong>
+
+      <span>
+        HR Manager
+      </span>
+
+    </header>
+
+
+    <router-outlet></router-outlet>
+
+  </main>
+
+</div>

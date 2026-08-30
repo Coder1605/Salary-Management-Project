@@ -1,0 +1,391 @@
+<div class="form-page">
+
+  <div class="page-header">
+
+    <div>
+
+      <div class="breadcrumb">
+        ACME / Employees / Add Employee
+      </div>
+
+      <h1>Add Employee</h1>
+
+      <p>
+        Add a new employee and salary information.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="form-card">
+
+    <form
+      [formGroup]="employeeForm"
+      (ngSubmit)="submit()">
+
+
+      <!-- PERSONAL INFORMATION -->
+
+      <div class="section">
+
+        <h2>
+          Personal Information
+        </h2>
+
+        <p class="section-description">
+          Basic employee information.
+        </p>
+
+
+        <div class="form-grid">
+
+          <!-- FIRST NAME -->
+
+          <div class="field">
+
+            <label>
+              First Name *
+            </label>
+
+            <input
+              type="text"
+              formControlName="firstName"
+              placeholder="Enter first name"
+            />
+
+            @if (
+              employeeForm.controls.firstName.touched &&
+              employeeForm.controls.firstName.invalid
+            ) {
+
+              <small>
+                First name is required.
+              </small>
+
+            }
+
+          </div>
+
+
+          <!-- LAST NAME -->
+
+          <div class="field">
+
+            <label>
+              Last Name *
+            </label>
+
+            <input
+              type="text"
+              formControlName="lastName"
+              placeholder="Enter last name"
+            />
+
+            @if (
+              employeeForm.controls.lastName.touched &&
+              employeeForm.controls.lastName.invalid
+            ) {
+
+              <small>
+                Last name is required.
+              </small>
+
+            }
+
+          </div>
+
+
+          <!-- EMAIL -->
+
+          <div class="field">
+
+            <label>
+              Email *
+            </label>
+
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="employee@acme.com"
+            />
+
+            @if (
+              employeeForm.controls.email.touched &&
+              employeeForm.controls.email.invalid
+            ) {
+
+              <small>
+                Please enter a valid email.
+              </small>
+
+            }
+
+          </div>
+
+
+          <!-- COUNTRY -->
+
+          <div class="field">
+
+            <label>
+              Country *
+            </label>
+
+            <select
+              formControlName="country">
+
+              <option value="">
+                Select country
+              </option>
+
+              <option value="India">
+                India
+              </option>
+
+              <option value="USA">
+                USA
+              </option>
+
+              <option value="UK">
+                United Kingdom
+              </option>
+
+              <option value="Germany">
+                Germany
+              </option>
+
+              <option value="Singapore">
+                Singapore
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- JOB INFORMATION -->
+
+      <div class="section">
+
+        <h2>
+          Job Information
+        </h2>
+
+        <p class="section-description">
+          Employee role and department.
+        </p>
+
+
+        <div class="form-grid">
+
+
+          <!-- DEPARTMENT -->
+
+          <div class="field">
+
+            <label>
+              Department *
+            </label>
+
+            <select
+              formControlName="department">
+
+              <option value="">
+                Select department
+              </option>
+
+              <option value="Engineering">
+                Engineering
+              </option>
+
+              <option value="Finance">
+                Finance
+              </option>
+
+              <option value="Human Resources">
+                Human Resources
+              </option>
+
+              <option value="Sales">
+                Sales
+              </option>
+
+              <option value="Marketing">
+                Marketing
+              </option>
+
+              <option value="Operations">
+                Operations
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- JOB TITLE -->
+
+          <div class="field">
+
+            <label>
+              Job Title *
+            </label>
+
+            <input
+              type="text"
+              formControlName="jobTitle"
+              placeholder="Software Engineer"
+            />
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SALARY -->
+
+      <div class="section">
+
+        <h2>
+          Salary Information
+        </h2>
+
+        <p class="section-description">
+          Employee annual compensation.
+        </p>
+
+
+        <div class="form-grid">
+
+
+          <!-- SALARY -->
+
+          <div class="field">
+
+            <label>
+              Annual Salary *
+            </label>
+
+            <input
+              type="number"
+              formControlName="annualSalary"
+              placeholder="800000"
+            />
+
+          </div>
+
+
+          <!-- CURRENCY -->
+
+          <div class="field">
+
+            <label>
+              Currency *
+            </label>
+
+            <select
+              formControlName="currency">
+
+              <option value="INR">
+                INR - Indian Rupee
+              </option>
+
+              <option value="USD">
+                USD - US Dollar
+              </option>
+
+              <option value="GBP">
+                GBP - British Pound
+              </option>
+
+              <option value="EUR">
+                EUR - Euro
+              </option>
+
+              <option value="SGD">
+                SGD - Singapore Dollar
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SUCCESS -->
+
+      @if (successMessage) {
+
+        <div class="success-message">
+
+          ✓ {{ successMessage }}
+
+        </div>
+
+      }
+
+
+      <!-- ERROR -->
+
+      @if (errorMessage) {
+
+        <div class="error-message">
+
+          {{ errorMessage }}
+
+        </div>
+
+      }
+
+
+      <!-- BUTTONS -->
+
+      <div class="form-actions">
+
+        <button
+          type="button"
+          class="cancel-button"
+          (click)="cancel()">
+
+          Cancel
+
+        </button>
+
+
+        <button
+          type="submit"
+          class="save-button"
+          [disabled]="submitting">
+
+          @if (submitting) {
+
+            Creating...
+
+          }
+          @else {
+
+            Create Employee
+
+          }
+
+        </button>
+
+      </div>
+
+
+    </form>
+
+  </div>
+
+</div>

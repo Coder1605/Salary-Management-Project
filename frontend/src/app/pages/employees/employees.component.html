@@ -1,0 +1,241 @@
+<div class="employees-page">
+
+  <div class="page-header">
+
+    <div>
+      <div class="breadcrumb">
+        ACME / Employees
+      </div>
+
+      <h1>Employees</h1>
+
+      <p>
+        Manage employee information and salary details.
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- SUMMARY -->
+
+  <div class="summary-grid">
+
+    <div class="summary-card">
+
+      <div class="summary-icon">
+        👥
+      </div>
+
+      <div>
+
+        <span>Total Employees</span>
+
+        <strong>
+          {{ totalElements }}
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <div class="summary-card">
+
+      <div class="summary-icon">
+        💰
+      </div>
+
+      <div>
+
+        <span>Employees Loaded</span>
+
+        <strong>
+          {{ employees.length }}
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <div class="summary-card">
+
+      <div class="summary-icon">
+        🌍
+      </div>
+
+      <div>
+
+        <span>Current Page</span>
+
+        <strong>1</strong>
+
+      </div>
+
+    </div>
+
+
+    <div class="summary-card">
+
+      <div class="summary-icon">
+        🏢
+      </div>
+
+      <div>
+
+        <span>Records Per Page</span>
+
+        <strong>20</strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- TABLE -->
+
+  <div class="table-card">
+
+    <div class="table-title">
+
+      <h2>
+        Employee Directory
+      </h2>
+
+      <p>
+        Showing {{ employees.length }} employees
+      </p>
+
+    </div>
+
+
+    <div class="table-container">
+
+      <table>
+
+        <thead>
+
+          <tr>
+
+            <th>EMPLOYEE</th>
+
+            <th>COUNTRY</th>
+
+            <th>DEPARTMENT</th>
+
+            <th>JOB TITLE</th>
+
+            <th>SALARY</th>
+
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+          <tr *ngFor="let employee of employees">
+
+            <td>
+
+              <strong>
+
+                {{ employee.firstName }}
+                {{ employee.lastName }}
+
+              </strong>
+
+              <br>
+
+              <small>
+
+                {{ employee.email }}
+
+              </small>
+
+            </td>
+
+
+            <td>
+
+              {{ employee.country }}
+
+            </td>
+
+
+            <td>
+
+              {{ employee.department }}
+
+            </td>
+
+
+            <td>
+
+              {{ employee.jobTitle }}
+
+            </td>
+
+
+            <td>
+
+              {{ employee.currency }}
+              {{ employee.annualSalary }}
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <!-- PAGINATION -->
+
+    <div class="pagination">
+
+      <span>
+
+        Showing
+        <strong>{{ employees.length }}</strong>
+        of
+        <strong>{{ totalElements }}</strong>
+        employees
+
+      </span>
+
+      <div>
+
+        <button>
+          ← Previous
+        </button>
+
+        <button class="active">
+          1
+        </button>
+
+        <button>
+          2
+        </button>
+
+        <button>
+          3
+        </button>
+
+        <button>
+          Next →
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
