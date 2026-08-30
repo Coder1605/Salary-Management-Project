@@ -1,27 +1,85 @@
-# Frontend
+# ACME Salary Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+A full-stack employee salary management application built using **Spring Boot, Angular, and MySQL**.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* Employee management
+* Add and view employees
+* Employee search and filtering
+* Pagination
+* Salary management
+* Salary analytics
+* Dashboard
+* Form validation
+* REST APIs
+* Unit testing with JUnit and Mockito
 
-## Code scaffolding
+## Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Backend**
 
-## Build
+* Java 17
+* Spring Boot
+* Spring Data JPA / Hibernate
+* MySQL
+* JUnit 5 / Mockito
+* Maven
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**Frontend**
 
-## Running unit tests
+* Angular
+* TypeScript
+* HTML
+* CSS
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## API Endpoints
 
-## Running end-to-end tests
+```text
+GET    /api/employees
+GET    /api/employees/{id}
+POST   /api/employees
+PUT    /api/employees/{id}/salary
+GET    /api/analytics/summary
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Run Backend
 
-## Further help
+```powershell
+.\mvnw.cmd spring-boot:run
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Backend:
+
+```text
+http://localhost:8080
+```
+
+## Run Frontend
+
+```bash
+npm install
+ng serve
+```
+
+Frontend:
+
+```text
+http://localhost:4200
+```
+
+## Testing
+
+```powershell
+.\mvnw.cmd test
+```
+
+## Git
+
+The project was developed incrementally using Git with commits for backend APIs, analytics, validation, tests, Angular pages, forms, and UI improvements.
+
+
+
+## Author
+
+**Kiran Giri**
